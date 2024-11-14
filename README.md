@@ -8,5 +8,5 @@ To install them, use pip install -r requirements/requirements.txt
 Inside the HeartHelper folder, open your terminal and type 'flask run'
 
 # How it works? 
-This project is based on the open [Heart Attack Analysis & Prediction Dataset](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset). I used stacking to get the best accuracy score. 
+This project is based on the open [Heart Attack Analysis & Prediction Dataset](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset). I used stacking to get a better accuracy score. 
 You can see dumped models in models/dumped_models. 
