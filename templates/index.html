@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструмент для Оценки Сердечного Здоровья</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Инструмент для Оценки Сердечного Здоровья</h1>
+            <p>Используйте этот инструмент для оценки риска сердечно-сосудистых заболеваний на основе различных факторов здоровья.</p>
+        </header>
+
+        <form class="health-form" action="/" method="post">
+            <h2>Информация о Пациенте</h2>
+
+            <div class="form-row">
+                <label for="age">Возраст:</label>
+                <input type="number" id="age" name="age" min="0" max="120" required>
+            </div>
+
+            <div class="form-row">
+                <label for="sex">Пол:</label>
+                <select id="sex" name="sex" required>
+                    <option value="" disabled selected>Выберите</option>
+                    <option value="0">Мужской</option>
+                    <option value="1">Женский</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="cp">Тип боли в груди:</label>
+                <select id="cp" name="cp" required>
+                    <option value="" disabled selected>Выберите</option>
+                    <option value="0">Тип 1: Боль в груди</option>
+                    <option value="1">Тип 2: Безболезненная боль</option>
+                    <option value="2">Тип 3: Сжимающая боль</option>
+                    <option value="3">Тип 4: Нет боли</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="trtbps">Артериальное давление в покое (мм рт. ст.):</label>
+                <input type="number" id="trtbps" name="trtbps" required>
+            </div>
+
+            <div class="form-row">
+                <label for="chol">Уровень холестерина (мг/дл):</label>
+                <input type="number" id="chol" name="chol" required>
+            </div>
+
+            <div class="form-row">
+                <label for="fbs">Уровень сахара натощак > 120 мг/дл:</label>
+                <select id="fbs" name="fbs" required>
+                    <option value="" disabled selected>Выберите</option>
+                    <option value="0">Нет</option>
+                    <option value="1">Да</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="restecg">Электрокардиограмма в покое:</label>
+                <select id="restecg" name="restecg" required>
+                    <option value="" disabled selected>Выберите</option>
+                    <option value="0">Нормальный</option>
+                    <option value="1">Имеются отклонения</option>
+                    <option value="2">Гипертрофия</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="thalachh">Максимальная частота сердечных сокращений (уд/мин):</label>
+                <input type="number" id="thalachh" name="thalachh" required>
+            </div>
+
+            <div class="form-row">
+                <label for="exng">Стенокардия, вызванная физической нагрузкой:</label>
+                <select id="exng" name="exng" required>
+                    <option value="" disabled selected>Выберите</option>
+                    <option value="0">Нет</option>
+                    <option value="1">Да</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="oldpeak">Депрессия сегмента ST:</label>
+                <input type="number" id="oldpeak" name="oldpeak" step="0.1" required>
+            </div>
+
+            <div class="form-row">
+                <label for="slp">Слоя пациента:</label>
+                <select id="slp" name="slp" required>
+                    <option value="" disabled selected>Выберите</option>
+                    <option value="0">Нормальный</option>
+                    <option value="1">Преходящий</option>
+                    <option value="2">Необходима госпитализация</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="caa">Количество основных сосудов (0-3):</label>
+                <input type="number" id="caa" name="caa" min="0" max="3" required>
+            </div>
+
+            <div class="form-row">
+                <label for="thall">Талассемия:</label>
+                <select id="thall" name="thall" required>
+                    <option value="" disabled selected>Выберите</option>
+                    <option value="0">Норма</option>
+                    <option value="1">Фиксированный дефект</option>
+                    <option value="2">Обратимый дефект</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn">Сформировать оценку</button>
+        </form>
+
+        {% if result is not none %}
+        <div id="result-container" class="result-container show">
+            <p id="result-text">Примерный риск развития сердечно-сосудистых заболеваний: {{ result }}%. Не является полной заменой доктора.</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
