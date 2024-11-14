@@ -1,5 +1,6 @@
 # HeartHelper
 AI-powered application to assess your heart health.
+**Attention!** This app should not be used as a substitute for a medical professional. Use at your own risk.
 In the requirements folder, you can find the dependencies you need to run the app.
 To install them, use pip install -r requirements/requirements.txt
 
