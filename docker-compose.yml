@@ -1,0 +1,13 @@
+services:
+  app:
+    image: python:3.9-slim
+    ports: 
+      - 5000:5000
+    volumes:
+      - .:/project/app
+    working_dir: /project/app/app
+    command: bash -c "
+        pip install -U pip &&
+        pip install -r requirements/requirements.txt &&
+        flask run --host=0.0.0.0
+      "

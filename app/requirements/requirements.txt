@@ -1,8 +1,8 @@
 numpy
 pandas
 scikit-learn
-catboost
 Flask
+catboost
 matplotlib
 seaborn
 ipywidgets

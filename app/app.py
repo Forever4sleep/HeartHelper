@@ -27,8 +27,6 @@ def index():
         ]])
         
         result = int(model.predict_proba(input_data)[0][1] * 100)
-        print(model.predict_proba(input_data))
-        print(result)
         if result % 10 == 0:
             result = f'<{result + 5}' if result + 5 < 100 else 'практически 100%. Обратитесь к врачу'
         else:
